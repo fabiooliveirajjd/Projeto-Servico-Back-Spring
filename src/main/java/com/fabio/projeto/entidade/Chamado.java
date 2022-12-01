@@ -3,14 +3,12 @@ package com.fabio.projeto.entidade;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 import com.fabio.projeto.enuns.Prioridade;
@@ -54,22 +52,6 @@ public class Chamado implements Serializable {
 	
 	@Transient
 	private String nomeTecnico;
-	
-	public String getNomeTecnico() {
-		return nomeTecnico;
-	}
-
-	public void setNomeTecnico(String nomeTecnico) {
-		this.nomeTecnico = nomeTecnico;
-	}
-
-	public String getNomeCliente() {
-		return nomeCliente;
-	}
-
-	public void setNomeCliente(String nomeCliente) {
-		this.nomeCliente = nomeCliente;
-	}
 
 	@Transient
 	private String nomeCliente;
@@ -170,6 +152,22 @@ public class Chamado implements Serializable {
 
 	public void setIdCliente(Integer idCliente) {
 		this.idCliente = idCliente;
+	}
+	
+	public String getNomeTecnico() {
+		return nomeTecnico;
+	}
+
+	public void setNomeTecnico(String nomeTecnico) {
+		this.nomeTecnico = nomeTecnico;
+	}
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
 	}
   
 	
