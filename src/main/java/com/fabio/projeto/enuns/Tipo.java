@@ -1,9 +1,9 @@
 package com.fabio.projeto.enuns;
 
 public enum Tipo {
-	FERRAMENTA(1, "FERRAMENTA"), 
-	PECA(2, "PECA"), 
-	OUTRO(3, "OUTRO");
+	FERRAMENTA(0, "FERRAMENTA"), 
+	PECA(1, "PECA"), 
+	OUTRO(2, "OUTRO");
 
 		private Integer codigo;
 		private String descricao;

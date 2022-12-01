@@ -42,6 +42,11 @@ public class TecnicoService {
 			
 		}
 
+		public Tecnico findById(Tecnico tecnico) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
 		
 	}
 

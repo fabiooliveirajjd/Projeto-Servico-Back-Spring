@@ -41,5 +41,10 @@ public class ClienteService {
 			repository.deleteById(id);
 			
 		}
+
+		public Cliente findById(Cliente cliente) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
 

@@ -19,10 +19,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "cliente")
-	private List<Chamado> chamados = new ArrayList<>();
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idCliente;
