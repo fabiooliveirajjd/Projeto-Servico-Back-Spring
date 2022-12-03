@@ -40,6 +40,16 @@ public class Tecnico implements Serializable {
 		super();
 	}
 
+	
+
+	public Tecnico(Integer idTecnico, String nome) {
+		super();
+		this.idTecnico = idTecnico;
+		this.nome = nome;
+	}
+
+
+
 	public Tecnico(Integer idTecnico, String nome, String cpf, String email, String senha) {
 		super();
 		this.idTecnico = idTecnico;
