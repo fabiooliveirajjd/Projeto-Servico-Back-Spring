@@ -18,7 +18,6 @@ public class ClienteService {
 	public Cliente findById(Integer id) {
 		Optional<Cliente> obj = repository.findById(id);
 		return obj.orElse(null);
-
 	}
 
 	public List<Cliente> findAll() {

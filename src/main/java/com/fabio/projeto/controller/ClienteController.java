@@ -51,7 +51,6 @@ public class ClienteController {
 	public ResponseEntity<Cliente> update(@PathVariable Integer id,@RequestBody Cliente cliente){
 	Cliente obj  = this.service.update(id, cliente);
 	return ResponseEntity.ok().body(obj);
-		
 	}
 	
 	@DeleteMapping(value = "/{id}")

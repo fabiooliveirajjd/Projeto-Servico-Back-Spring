@@ -42,13 +42,13 @@ public class ChamadoController {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Chamado> findById(@PathVariable Integer id) {
 		Chamado obj = ((ChamadoService) this.service).findById(id);
-		
+
 		Tecnico tec = tecService.findById(obj.getIdTecnico());
 		Cliente cliente = cliService.findById(obj.getIdCliente());
 
 		obj.setNomeCliente(cliente.getNome());
 		obj.setNomeTecnico(tec.getNome());
-		
+
 		return ResponseEntity.ok().body((obj));
 	}
 
@@ -81,25 +81,21 @@ public class ChamadoController {
 		if (chamado.getStatus().equals(Status.ENCERRADO)) {
 			chamado.setDataFechamento(LocalDate.now());
 		}
-	
+
 		Chamado obj = this.service.update(id, chamado);
-		
 
 		Tecnico tec = tecService.findById(obj.getIdTecnico());
 		Cliente cliente = cliService.findById(obj.getIdCliente());
 
 		obj.setNomeCliente(cliente.getNome());
 		obj.setNomeTecnico(tec.getNome());
-			
+
 		return ResponseEntity.ok().body((obj));
-		
-		
 	}
 
 	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Chamado> delete(@PathVariable Integer id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
-
 	}
 }
