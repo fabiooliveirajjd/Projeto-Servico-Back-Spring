@@ -39,14 +39,12 @@ public class TecnicoService {
 		public void delete(Integer id) {
 			Tecnico obj = findById(id);
 			repository.deleteById(id);
-			
 		}
-
+		
 		public Tecnico findById(Tecnico tecnico) {
 			// TODO Auto-generated method stub
 			return null;
 		}
-
-		
+	
 	}
 

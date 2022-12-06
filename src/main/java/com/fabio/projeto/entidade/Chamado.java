@@ -48,7 +48,7 @@ public class Chamado implements Serializable {
 	private Integer idTecnico;
 
 	@Column
-	private Integer idCliente;
+	private Integer idCliente;   
 	
 	@Transient
 	private String nomeTecnico;

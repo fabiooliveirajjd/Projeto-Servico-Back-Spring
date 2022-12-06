@@ -34,52 +34,29 @@ public class TecnicoController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<Tecnico>> findAll(){
+	public ResponseEntity<List<Tecnico>> findAll() {
 		List<Tecnico> listTecnico = this.service.findAll();
 		return ResponseEntity.ok().body(listTecnico);
-		}
+	}
 
 	@PostMapping
-	public ResponseEntity<Tecnico> create(@RequestBody Tecnico tecnico){
+	public ResponseEntity<Tecnico> create(@RequestBody Tecnico tecnico) {
 		Tecnico novoTecnico = this.service.create(tecnico);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").
-				buildAndExpand(novoTecnico.getIdTecnico()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+				.buildAndExpand(novoTecnico.getIdTecnico()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
-	
+
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<Tecnico> update(@PathVariable Integer id,@RequestBody Tecnico tecnico){
-	Tecnico obj  = this.service.update(id, tecnico);
-	return ResponseEntity.ok().body(obj);
+	public ResponseEntity<Tecnico> update(@PathVariable Integer id, @RequestBody Tecnico tecnico) {
+		Tecnico obj = this.service.update(id, tecnico);
+		return ResponseEntity.ok().body(obj);
 	}
-	
+
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Tecnico> delete(@PathVariable Integer id){
+	public ResponseEntity<Tecnico> delete(@PathVariable Integer id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	
-	
-	
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
