@@ -55,15 +55,15 @@ public class ChamadoController {
 	@GetMapping
 	public ResponseEntity<List<Chamado>> findAll() {
 		List<Chamado> listChamado = this.service.findAll();
-
-		for (Chamado item : listChamado) {
-
-			Tecnico tec = tecService.findById(item.getIdTecnico());
-			Cliente cliente = cliService.findById(item.getIdCliente());
-
-			item.setNomeCliente(cliente.getNome());
-			item.setNomeTecnico(tec.getNome());
-		}
+	
+//		for (Chamado item : listChamado) {
+//
+//		Tecnico tec = tecService.findById(item.getIdTecnico());
+//		Cliente cliente = cliService.findById(item.getIdCliente());
+//
+//			item.setNomeCliente(cliente.getNome());
+//			item.setNomeTecnico(tec.getNome());
+//		}
 
 		return ResponseEntity.ok().body(listChamado);
 	}
