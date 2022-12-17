@@ -41,13 +41,13 @@ public class ChamadoController {
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Chamado> findById(@PathVariable Integer id) {
-		Chamado obj = ((ChamadoService) this.service).findById(id);
+		Chamado obj = this.service.findById(id);
 
 		Tecnico tec = tecService.findById(obj.getIdTecnico());
 		Cliente cliente = cliService.findById(obj.getIdCliente());
 
-		obj.setNomeCliente(cliente.getNome());
-		obj.setNomeTecnico(tec.getNome());
+		obj.setNomeTecnico(tec != null ? tec.getNome() : "Tecnico Excluído");
+		obj.setNomeCliente(cliente != null ? cliente.getNome() : "Cliente Excluído");
 
 		return ResponseEntity.ok().body((obj));
 	}
@@ -55,15 +55,14 @@ public class ChamadoController {
 	@GetMapping
 	public ResponseEntity<List<Chamado>> findAll() {
 		List<Chamado> listChamado = this.service.findAll();
-	
-//		for (Chamado item : listChamado) {
-//
-//		Tecnico tec = tecService.findById(item.getIdTecnico());
-//		Cliente cliente = cliService.findById(item.getIdCliente());
-//
-//			item.setNomeCliente(cliente.getNome());
-//			item.setNomeTecnico(tec.getNome());
-//		}
+
+		for (Chamado chamado1 : listChamado) {
+			Tecnico tecnico = tecService.findById(chamado1.getIdTecnico());
+			Cliente cliente = cliService.findById(chamado1.getIdCliente());
+
+			chamado1.setNomeTecnico(tecnico != null ? tecnico.getNome() : "Tecnico Excluído");
+			chamado1.setNomeCliente(cliente != null ? cliente.getNome() : "Cliente Excluído");
+		}
 
 		return ResponseEntity.ok().body(listChamado);
 	}
@@ -87,8 +86,8 @@ public class ChamadoController {
 		Tecnico tec = tecService.findById(obj.getIdTecnico());
 		Cliente cliente = cliService.findById(obj.getIdCliente());
 
-		obj.setNomeCliente(cliente.getNome());
-		obj.setNomeTecnico(tec.getNome());
+		obj.setNomeTecnico(tec != null ? tec.getNome() : "Tecnico Excluído");
+		obj.setNomeCliente(cliente != null ? cliente.getNome() : "Cliente Excluído");
 
 		return ResponseEntity.ok().body((obj));
 	}

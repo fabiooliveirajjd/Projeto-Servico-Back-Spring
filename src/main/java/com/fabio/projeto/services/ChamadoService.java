@@ -24,6 +24,10 @@ public class ChamadoService {
 		return repository.findAll();
 	}
 
+//	public List<BigDecimal> calcular() {
+//		return repository.calcular(null, null, null);
+//	}
+
 	public Chamado create(Chamado chamado) {
 		return repository.save(chamado);
 	}

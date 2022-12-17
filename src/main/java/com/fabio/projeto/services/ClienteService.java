@@ -41,9 +41,5 @@ public class ClienteService {
 			
 		}
 
-		public Cliente findById(Cliente cliente) {
-			// TODO Auto-generated method stub
-			return null;
-		}
 	}
 

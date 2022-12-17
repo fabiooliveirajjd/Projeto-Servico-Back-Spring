@@ -2,7 +2,7 @@ package com.fabio.projeto.entidade;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Faturamento implements Serializable {
@@ -30,11 +28,11 @@ public class Faturamento implements Serializable {
 	@Column
 	private Integer idCliente;
 
-	@JsonFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataInicioFaturamento;
+	@Column
+	private Date dataInicioFaturamento;
 
-	@JsonFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataFimFaturamento;
+	@Column
+	private Date dataFimFaturamento;
 
 	@Transient
 	private String nomeCliente;
@@ -47,14 +45,14 @@ public class Faturamento implements Serializable {
 	}
 
 	public Faturamento(Integer idFaturamento, BigDecimal valorTotal, Integer idTecnico, Integer idCliente,
-			String nomeCliente, String nomeTecnico) {
+			Date dataInicioFaturamento, Date dataFimFaturamento) {
 		super();
 		this.idFaturamento = idFaturamento;
 		this.valorTotal = valorTotal;
 		this.idTecnico = idTecnico;
 		this.idCliente = idCliente;
-		this.nomeCliente = nomeCliente;
-		this.nomeTecnico = nomeTecnico;
+		this.dataInicioFaturamento = dataInicioFaturamento;
+		this.dataFimFaturamento = dataFimFaturamento;
 	}
 
 	public Integer getIdFaturamento() {
@@ -89,19 +87,19 @@ public class Faturamento implements Serializable {
 		this.idCliente = idCliente;
 	}
 
-	public LocalDate getDataInicioFaturamento() {
+	public Date getDataInicioFaturamento() {
 		return dataInicioFaturamento;
 	}
 
-	public void setDataInicioFaturamento(LocalDate dataInicioFaturamento) {
+	public void DataInicioFaturamento(Date dataInicioFaturamento) {
 		this.dataInicioFaturamento = dataInicioFaturamento;
 	}
 
-	public LocalDate getDataFimFaturamento() {
+	public Date getDataFimFaturamento() {
 		return dataFimFaturamento;
 	}
 
-	public void setDataFimFaturamento(LocalDate dataFimFaturamento) {
+	public void DataFimFaturamento(Date dataFimFaturamento) {
 		this.dataFimFaturamento = dataFimFaturamento;
 	}
 
