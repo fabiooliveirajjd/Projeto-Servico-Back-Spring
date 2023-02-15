@@ -40,5 +40,4 @@ public class Faturamento implements Serializable {
 
 	@Transient
 	private String nomeTecnico;
-
 }

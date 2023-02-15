@@ -27,7 +27,7 @@ public class Cliente implements Serializable {
 	private Integer idCliente;
 
 	@Column
-	private String nome;
+	private String nome;     
 
 //	@CPF
 	@Column(unique = true)
@@ -40,5 +40,4 @@ public class Cliente implements Serializable {
 
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
-
 }

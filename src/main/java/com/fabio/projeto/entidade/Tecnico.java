@@ -39,5 +39,4 @@ public class Tecnico implements Serializable {
 
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	protected LocalDate dataCriacao = LocalDate.now();
-
 }

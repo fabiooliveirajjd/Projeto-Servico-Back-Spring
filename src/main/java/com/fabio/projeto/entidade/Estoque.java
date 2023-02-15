@@ -37,5 +37,4 @@ public class Estoque implements Serializable {
 	protected LocalDate dataCompra = LocalDate.now();
 
 	private Tipo tipo;
-
 }
