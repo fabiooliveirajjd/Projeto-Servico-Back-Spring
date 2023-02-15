@@ -46,7 +46,6 @@ public class FaturamentoController {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Faturamento> findById(@PathVariable Integer id) {
 		Faturamento obj = this.service.findById(id);
-		;
 
 		Tecnico tec = tecnicoService.findById(obj.getIdTecnico());
 		Cliente cliente = clienteService.findById(obj.getIdCliente());

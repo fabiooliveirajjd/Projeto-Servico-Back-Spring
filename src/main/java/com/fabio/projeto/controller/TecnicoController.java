@@ -20,7 +20,7 @@ import com.fabio.projeto.entidade.Tecnico;
 import com.fabio.projeto.services.TecnicoService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RequestMapping(value = "/tecnicos") // localhost:8080/tecnicos
 public class TecnicoController {
 
